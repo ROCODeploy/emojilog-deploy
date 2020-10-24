@@ -29,9 +29,9 @@ const mod = (function OLSKServiceWorkerModule (param1, param2, param3, param4) {
 
 			// DATA
 
-			_DataVersionCacheName: 'OLSKServiceWorkerVersionCache-1603555282532',
+			_DataVersionCacheName: 'OLSKServiceWorkerVersionCache-1603555391837',
 			_DataPersistenceCacheName: 'OLSKServiceWorkerPersistenceCache',
-			_DataOriginPage: '/write',
+			_DataOriginPage: '/track',
 
 			// CONTROL
 
@@ -72,7 +72,7 @@ const mod = (function OLSKServiceWorkerModule (param1, param2, param3, param4) {
 					return;
 				}
 
-				// if (!(event.request.referrer.match(//write/) && event.request.mode === 'no-cors') && !event.request.url.match(//write/)) {
+				// if (!(event.request.referrer.match(//track/) && event.request.mode === 'no-cors') && !event.request.url.match(//track/)) {
 				// 	return console.log('ignoring referrer', event.request);
 				// };
 
