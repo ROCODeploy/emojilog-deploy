@@ -1,4 +1,8 @@
 :root {
-	--EMTCommonBackground: rgba(0, 0, 0, 0);
-	--EMTCommonForeground: rgba(0, 0, 0, 1);
+	--KVCCommonBackground: hsl(0, 0%, 100%);
+	--KVCCommonForeground: hsl(0, 0%, 0%);
+}
+
+.KVCSharedHidden {
+	display: none !important;
 }
