@@ -1,13 +1,10 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<title>Emoji Timer</title>
 	<meta name="description" content="Measure your progress" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+	<link rel="icon" href="data:;base64,=">
 	<meta name="viewport" content="width=device-width">
 	<link rel="canonical" href="/" />
 	<link rel="alternate" hreflang="en" href="/en/" />
@@ -16,7 +13,10 @@
 			return {"OLSKSharedPageCurrentLanguage":"en"}[inputData];
 		};
 	</script>
-	<link rel="apple-touch-icon" href="https://rosano.s3.amazonaws.com/public/emojitimer/identity.png">
+	<script>
+  document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+  ':35729/livereload.js?snipver=1"></' + 'script>')
+</script>
 	<link rel="stylesheet" type="text/css" href="/_shared/__external/normalize.css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="/_shared/__external/OLSKLayout/ui-style.css">
 	<link rel="stylesheet" type="text/css" href="/_shared/common/ui-style.css">
@@ -24,6 +24,7 @@
 </head>
 
 <body>
+
 
 
 <div class="EMTVitrine OLSKCommon">
@@ -54,9 +55,9 @@
 <p>Emoji Timer is an app to help you track and change your habits.</p>
 <p>The code is open-source and available on <a href="https://github.com/emojitimer/emt-lib">GitHub</a>.</p>
 <p>The project is freely accessible but if you are in a position to give, please <a href="https://rosano.ca/donate">donate</a> to support future development.</p>
-<p><a class="EMTVitrineContentAppButton OLSKCommonButton" href="/en/track">Go to app</a></p>
+<p><a class="EMTVitrineContentAppButton OLSKCommonButton OLSKCommonButtonPrimary" href="/en/track">Open app</a></p>
 <hr>
-<h2>Features</h2>
+<h2 id="features">Features</h2>
 <ul>
 <li>Sync with multiple devices via remoteStorage</li>
 <li>Works offline without internet access</li>
@@ -83,6 +84,6 @@
 
 </div>
 
+
 </body>
 </html>
-
