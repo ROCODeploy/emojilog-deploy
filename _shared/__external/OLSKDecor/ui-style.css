@@ -48,9 +48,41 @@
 	border-bottom: var(--OLSKCommonEdgeBorder) !important;
 }
 
+/* OLSKDecorFixed */
+
+.OLSKDecorFixed {
+	--OLSKDecorFixedSecondaryHeight: 53px;
+}
+
+@media screen and (min-width: 760px) {
+
+.OLSKDecorFixed {
+	--OLSKDecorFixedSecondaryHeight: 41px;
+}
+
+}
+
+.OLSKDecorFixedHeader {
+	position: fixed;
+	top: 0;
+	display: block;
+	width: 100%;
+	z-index: 2;
+}
+
+.OLSKDecorFixedSecondary {
+	margin-top: var(--OLSKDecorFixedSecondaryHeight);
+}
+
+.OLSKDecorFixedSecondary .OLSKStickyHeader {
+	top: var(--OLSKDecorFixedSecondaryHeight);
+	z-index: 1;
+}
+
 /* OLSKStickyHeader */
 
 .OLSKStickyHeader {
+	position: -webkit-sticky;
 	position: sticky;
 	top: 0;
 }
@@ -98,6 +130,7 @@
 }
 
 .OLSKMobileViewHeader {
+	position: -webkit-sticky;
 	position: sticky;
 	top: 0;
 }
