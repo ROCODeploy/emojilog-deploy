@@ -298,12 +298,6 @@
 	-webkit-overflow-scrolling: touch;
 }
 
-.OLSKMobileSafariRemoveDefaultInputStyle {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-}
-
 /* OLSKMasterList */
 
 .OLSKIsLoading .OLSKMasterListBody {
@@ -439,6 +433,15 @@
 	padding: var(--OLSKCommonInputPadding);
 	border: var(--OLSKCommonBorder);
 	border-radius: var(--OLSKBorderRadius);
+
+	/* OLSKMobileSafariRemoveDefaultInputStyle */
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.OLSKDecor input, .OLSKDecor textarea {	
+	border: var(--OLSKCommonEdgeBorder);
 }
 
 .OLSKDecor button, .OLSKDecorPress, .OLSKDecor input[type="submit"] {
@@ -653,7 +656,6 @@ a.OLSKDecorPress {
 .OLSKDecorBigForm input[type=text], .OLSKDecorBigForm textarea {
 	width: 90%;
 	padding: calc(var(--OLSKSharedPadding) * 2);
-	border: var(--OLSKCommonEdgeBorder);
 }
 
 /*.OLSKCommonForm input[type=text] {
