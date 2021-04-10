@@ -11,6 +11,8 @@
 	--OLSKCommonBackground: white;
 	--OLSKCommonForeground: black;
 
+	--OLSKInputBackground: var(--OLSKCommonBackground);
+
 	--OLSKCommonBorderColor: rgba(0, 0, 0, 0.3);
 	--OLSKCommonBorder: 1px solid var(--OLSKCommonBorderColor);
 
@@ -19,6 +21,9 @@
 
 	--OLSKCommonInteractiveFill: hsl(0, 0%, 90%);
 
+	--OLSKChunkHeadingBorderColor: #cccccc;
+	--OLSKChunkHeadingBackground: #e9e9e9;
+
 	--OLSKCommonInputPadding: 5px;
 
 	--OLSKSharedPadding: 4px;
@@ -26,12 +31,16 @@
 
 	--OLSKSectionSpacing: 2em;
 
-	--OLSKMasterListItemSelectedColorDefault: #e6e6e6;
-	--OLSKMasterListItemSelectedColorActive: #1a81ff;
-	--OLSKMasterListItemSelectedColorActiveInverse: white;
+	--OLSKCollectionItemsLocusColorDefault: #e6e6e6;
+	--OLSKCollectionItemsLocusColorActive: #1a81ff;
+	--OLSKCollectionItemsLocusColorActiveInverse: white;
 
 	--OLSKAlertColor: #eeeeee;
-	--OLSKCodeColor: hsl(0, 0%, 20%);
+	
+	--OLSKCodeBackground: #eeeeee;
+	--OLSKCodeForeground: #333;
+
+	--OLSKStickyHeaderTop: 0;
 }
 
 /* OLSKCommonEdge */
@@ -84,7 +93,7 @@
 .OLSKStickyHeader {
 	position: -webkit-sticky;
 	position: sticky;
-	top: 0;
+	top: var(--OLSKStickyHeaderTop);
 }
 
 /* OLSKViewport */
@@ -322,15 +331,15 @@
 	flex-grow: 1;
 }
 
-.OLSKMasterListBody .OLSKResultsListItemSelected .OLSKMasterListItem {
-	background: var(--OLSKMasterListItemSelectedColorDefault);
+.OLSKMasterListBody .OLSKCollectionItemLocus {
+	background: var(--OLSKCollectionItemsLocusColorDefault);
 }
 
 @media screen and (min-width: 760px) {
 
-.OLSKMasterListFocused .OLSKResultsListItemSelected .OLSKMasterListItem {
-	background: var(--OLSKMasterListItemSelectedColorActive);
-	color: var(--OLSKMasterListItemSelectedColorActiveInverse);
+.OLSKMasterListFocused .OLSKCollectionItemLocus {
+	background: var(--OLSKCollectionItemsLocusColorActive);
+	color: var(--OLSKCollectionItemsLocusColorActiveInverse);
 }
 
 }
@@ -416,22 +425,27 @@
 	border-top: var(--OLSKCommonEdgeBorder);
 }
 
-.OLSKDecor input, .OLSKDecor button, .OLSKDecorPress, .OLSKDecor input[type="submit"], .OLSKDecor textarea {	
+.OLSKDecor input, .OLSKDecor button, .OLSKDecorPress, .OLSKDecor input[type="submit"], .OLSKDecor textarea, .OLSKDecorInput {	
 	display: inline-block;
 	padding: var(--OLSKCommonInputPadding);
 	border: var(--OLSKCommonBorder);
 	border-radius: var(--OLSKBorderRadius);
 }
 
-.OLSKDecor input[type="text"], .OLSKDecor textarea {	
+.OLSKDecor input[type="text"], .OLSKDecor textarea, .OLSKDecorInput {	
+	background: var(--OLSKInputBackground) !important;
+	border-color: var(--OLSKCommonEdgeColor) !important;
+
 	/* OLSKMobileSafariRemoveDefaultInputStyle */
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
 }
 
-.OLSKDecor input, .OLSKDecor textarea {	
+.OLSKDecor input, .OLSKDecor textarea, .OLSKDecorInput {	
 	border: var(--OLSKCommonEdgeBorder);
+
+	color: var(--OLSKCommonForeground);
 }
 
 .OLSKDecor button, .OLSKDecorPress, .OLSKDecor input[type="submit"] {
@@ -439,7 +453,7 @@
 }
 
 a.OLSKDecorPress {
-	color: var(--OLSKCommonForeground);
+	color: black;
 	text-decoration: none;
 }
 
@@ -465,8 +479,8 @@ a.OLSKDecorPress {
 	padding: var(--OLSKSharedPadding);
 	border-radius: var(--OLSKBorderRadius);
 
-	background: var(--OLSKAlertColor);
-	color: var(--OLSKCodeColor);
+	background: var(--OLSKCodeBackground);
+	color: var(--OLSKCodeForeground);
 }
 
 /* OLSKDecorNotice */
@@ -495,7 +509,10 @@ a.OLSKDecorPress {
 /* OLSKCommonAppring */
 
 .OLSKCommonAppring {
+	display: block;
+
 	margin: 40px 0;
+	
 	text-align: center;
 }
 
@@ -694,4 +711,52 @@ a.OLSKDecorPress {
 .OLSKDecorX img {
     border: 5px var(--OLSKCommonInteractiveFill) solid;
     border-radius: var(--OLSKBorderRadius);
+}
+
+/* OLSKDecorSilentLink */
+
+.OLSKDecorSilentLink:after {
+ content: unset !important;
+}
+
+.OLSKDecorSilentLink img {
+ border: none !important;
+}
+
+/* OLSKDecorGlossary */
+
+.OLSKDecorGlossary {
+	padding: 30px;
+
+	margin: 50px 0;
+
+	background: hsl(0, 0%, 96%);
+	color: hsl(0, 0%, 20%);
+}
+
+.OLSKDecorGlossary :first-child {
+	margin-top: 0;
+}
+
+.OLSKDecorGlossary :last-child {
+	margin-bottom: 0;
+}
+
+.OLSKDecorGlossary dt {
+	font-weight: bold;
+}
+
+.OLSKDecorGlossary dd {
+	margin: 10px 0;
+}
+
+/* OLSKCollectionChunkHeading */
+
+.OLSKCollectionChunkHeading {
+	padding: 6px;
+	outline: var(--OLSKChunkHeadingBorderColor) solid 1px;
+
+	font-weight: bold;
+	color: var(--OLSKCommonForeground);
+	background: var(--OLSKChunkHeadingBackground);
 }
