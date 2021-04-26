@@ -307,37 +307,41 @@
 	-webkit-overflow-scrolling: touch;
 }
 
-/* OLSKMasterList */
+/* OLSKNarrow */
 
-.OLSKIsLoading .OLSKMasterListBody {
+.OLSKIsLoading .OLSKNarrowBody {
 	visibility: hidden;
 }
 
-.OLSKMasterList {
-	/* OLSKMasterListFlexbox:Parent */
+.OLSKNarrow {
+	/* OLSKNarrowFlexbox:Parent */
 	display: flex;
 	flex-direction: column;
 }
 
-.OLSKMasterListToolbar {
-	/* OLSKMasterListFlexbox:Child */
+.OLSKNarrowToolbar {
+	/* OLSKNarrowFlexbox:Child */
 	flex-shrink: 0;
 }
 
-.OLSKMasterListBody {
+.OLSKNarrowBody {
 	overflow: auto;
 	
-	/* OLSKMasterListFlexbox:Child */
+	/* OLSKNarrowFlexbox:Child */
 	flex-grow: 1;
 }
 
-.OLSKMasterListBody .OLSKCollectionItemLocus {
+.OLSKNarrowBody .OLSKCollection {
+	flex-shrink: 0;
+}
+
+.OLSKNarrowBody .OLSKCollectionItemLocus {
 	background: var(--OLSKCollectionItemsLocusColorDefault);
 }
 
 @media screen and (min-width: 760px) {
 
-.OLSKMasterListFocused .OLSKCollectionItemLocus {
+.OLSKNarrowFocused .OLSKCollectionItemLocus {
 	background: var(--OLSKCollectionItemsLocusColorActive);
 	color: var(--OLSKCollectionItemsLocusColorActiveInverse);
 }
@@ -432,7 +436,7 @@
 	border-radius: var(--OLSKBorderRadius);
 }
 
-.OLSKDecor input[type="text"], .OLSKDecor textarea, .OLSKDecorInput {	
+.OLSKDecor input[type="text"], .OLSKDecor input[type="email"], .OLSKDecor textarea, .OLSKDecorInput {	
 	background: var(--OLSKInputBackground) !important;
 	border-color: var(--OLSKCommonEdgeColor) !important;
 
@@ -448,12 +452,20 @@
 	color: var(--OLSKCommonForeground);
 }
 
+.OLSKDecor input::placeholder, .OLSKDecor textarea::placeholder, .OLSKDecorInput::placeholder {	
+	color: var(--OLSKCommonEdgeColor);
+}
+
 .OLSKDecor button, .OLSKDecorPress, .OLSKDecor input[type="submit"] {
 	background: var(--OLSKCommonInteractiveFill);
 }
 
+.OLSKDecor a {	
+	color: var(--OLSKCommonLinkColor);
+}
+
 a.OLSKDecorPress {
-	color: black;
+	color: var(--OLSKCommonForeground);
 	text-decoration: none;
 }
 
@@ -660,7 +672,7 @@ a.OLSKDecorPress {
 	margin-top: 0;
 }
 
-.OLSKDecorBigForm input[type=text], .OLSKDecorBigForm textarea {
+.OLSKDecorBigForm input[type=text], .OLSKDecorBigForm input[type=email], .OLSKDecorBigForm textarea {
 	width: 90%;
 	padding: calc(var(--OLSKSharedPadding) * 2);
 }
@@ -759,4 +771,31 @@ a.OLSKDecorPress {
 	font-weight: bold;
 	color: var(--OLSKCommonForeground);
 	background: var(--OLSKChunkHeadingBackground);
+}
+
+/* OLSKCollectionItemStash */
+
+.OLSKCollectionItemStash .OLSKCollectionItemStashStatus {
+	background: var(--OLSKCommonForeground);
+}
+
+.OLSKCollectionItemStashStatus {
+	--OLSKCollectionItemStashStatusSize: 23px;
+	
+	display: block;
+	width: var(--OLSKCollectionItemStashStatusSize);
+	height: var(--OLSKCollectionItemStashStatusSize);
+	border: 1px solid var(--OLSKCommonForeground);
+	border-radius: calc(var(--OLSKCollectionItemStashStatusSize) / 2 + 1px);
+
+	margin: 10px;
+	margin-right: 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.OLSKCollectionItemStashStatusImage * {
+	stroke: var(--OLSKCommonBackground);
 }
