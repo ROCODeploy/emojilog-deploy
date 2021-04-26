@@ -309,7 +309,7 @@
 
 /* OLSKNarrow */
 
-.OLSKIsLoading .OLSKNarrowBody {
+.OLSKIsLoading .OLSKViewportContent {
 	visibility: hidden;
 }
 
