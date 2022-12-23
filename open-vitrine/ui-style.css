@@ -1,8 +1,0 @@
-body {
-	background: var(--OLSKCommonBackground);
-	color: var(--OLSKCommonForeground);
-}
-
-.OLSKDecorGlossary {
-	margin: unset;
-}
