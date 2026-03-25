@@ -1,0 +1,21 @@
+body {
+	background: var(--OLSKCommonBackground);
+	color: var(--OLSKCommonForeground);
+}
+
+.EMLGuide table:first-of-type h1 {
+	border: none;
+}
+
+.EMLGuide table:not(:first-of-type) td:first-child {
+	width: 50%;
+}
+
+.EMLGuideSundialLegendItem {
+	table-layout: fixed;
+}
+
+.OLSKSundial {	
+	--OLSKSundialStrokeColor: #bbb !important;
+	--OLSKSundialStrokeWidth: 1.5 !important;
+}
